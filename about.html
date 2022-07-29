@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width,initial-scale=1.0">
+        <title>About Myanmar</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Akshar&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+<section class="sub-header">
+<nav>
+    <a href="tutorial.html"><img src="logo1.png"></a>
+<div class="nav-links" id="navLinks">
+    <span class="material-symbols-outlined" onclick="hideMenu()">
+        close
+    </span>
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="dd"><a href="" >Divisions</a>
+            <ul class="ddmenu">
+                <li><a href="https://en.wikipedia.org/wiki/Yangon_Region">Yangon</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Sagaing_Region">Sagaing</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Magway_Region">Magway</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Bago_Region">Bago</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Mandalay_Region">Mandalay</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Tanintharyi_Region">Tanintharyi</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Ayeyarwady_Region">Ayyearwadi</a></li>
+            </ul>
+        </li>    	
+        <li class="dd"><a href="">States</a>
+        
+            <ul class="ddmenu">
+                <li><a href="https://en.wikipedia.org/wiki/Rakhine_State">Rakhine</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Chin_State">Chin</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Kachin_State">Kachin</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Mon_State">Mon</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Kayah_State">Kayar</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Shan_State">Shan</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Kayin_State">Kayin</a></li>
+            </ul>
+        </li>
+        <li><a href="enjoy.html">Enjoy</a></li>
+    </ul>
+ </div>
+ <span class="material-symbols-outlined" onclick="showMenu()">
+    menu
+    </span>
+</nav>
+
+<h1>About Us</h1>
+
+</section>
+
+<!-- About Us-->
+<section class="us">
+    <div class="row">
+        <div class="abtp-col">
+            <h1>The Golden Land - <b>Myanmar</b></h1>
+            <p>Travel to Myanmar and discover a country of mythical landscapes, ancient treasures and some of the friendliest folk you’ll ever meet. From golden-gilded Buddhas in Yangon and the magical temples
+                 of Bagan to the tranquillity of Inle Lake, Myanmar will excite, impress and intrigue you. A visit to Myanmar is to experience the South East Asia of twenty years ago, 
+                full of rarely seen sights and generations of stories just waiting to be told. Come and discover a little bit of Myanmar magic with us.</p>
+                <a href="" class="hero-btn red-btn" > Experience Now!</a>
+            </div>
+        <div class="abtp-col">
+            <img src="about2.jpg">
+        </div>
+    </div>
+</section>
+<!-- Chief Counsellors-->
+<section class="chief">
+    <h2 class="btn">Blood Vessels of Myanmar</h2>
+
+    <div class="img-row">
+            <div class="img-col">
+                <span></span>
+            <img src="aungsan.jpg" height="300px" width="500px"/>
+        </div>
+            <div class="img-col">
+                <h3>General Aung San</h3>
+            <p>Father of Myanmar</p>
+        </div>
+            <div class="img-col">
+                <span></span>
+                <img src="assk.webp" height="300px" width="500px"/>
+        </div>
+            <div class="img-col">
+                <h3>Aung San Suu Kyi</h3>
+            <p>State Counsellor of Myanmar</p>
+        </div>
+            <div class="img-col">
+                <h3>U Thant</h3>
+            <p>Third Secretary-general of the United Nations</p>
+        </div>
+            <div class="img-col">
+                <span class="arrow"></span>
+                <img src="unu.jpg" height="300px" width="500px"/>
+        </div>
+        <div class="img-col">
+               <h3>U Ko Ni</h3>
+        <p>Prominent Burmese Layer</p> 
+    </div>
+        <div class="img-col">
+            <span class="arrow"></span>
+        <img src="ukoni.jpg" height="300px" width="500px"/>
+    </div>
+    </div>
+    <div class="middle">
+    <a href="https://en.wikipedia.org/wiki/Myanmar"><button class="btn1">Explore More Heroes</button></a>
+    </div></div>
+</section>
+<!-- Footer-->
+<section class="footer">
+    <h4>About Us</h4> 
+    <p >Hello friends! I'm Yun Yun and Myanmar Citizen.The reason why I made this website is to help the tourisms exploring pleasures in Myanmar...
+<br>Thanks for Visiting Us..
+    </p>
+    <div class="icons">
+        <span class="material-symbols-outlined">mail</span>
+        <span class="material-symbols-outlined">contact_phone</span>   
+        <span class="material-symbols-outlined">share</span>    
+    </div>
+    <p >Made with<span class="material-symbols-outlined">favorite</span> by Yun Yun</p>
+</section>
+<!--Javascript Toggle Menu-->
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right="0";
+    }
+    function hideMenu(){
+        navLinks.style.right="-200px";
+    }
+</script>
+
+    </body>
+</html>

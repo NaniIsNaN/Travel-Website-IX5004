@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width,initial-scale=1.0">
+        <meta http-equiv="refresh" content="100">
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Roboto+Condensed:
+        ital,wght@0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+            (function(){
+            emailjs.init("V2HFNxxZsapH-z27X");
+            })();
+        </script>
+</head>
+<style>
+    .header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(31, 38, 70, 0.7),rgba(4,9,30,0.7)),url(bg4.png);
+    background-position: center;
+    position:relative;
+    background-size: cover;
+}
+    .enj{
+        width: 80%;
+        margin: 50px auto;
+        margin-top: 2px;
+    }
+    .contact-box{
+        background-color:rgba(192,192,192,0.3);
+        display: flex;
+    }
+    .left{
+        flex-basis: 60%;
+        padding: 40px 60px;
+    }
+    .right{
+        flex-basis: 40%;
+        padding:40px;
+        background-color:hsla(120,60%,70%,0.3);
+        color:white
+    }
+    h1{
+        margin-bottom: 10px;
+    }
+    h3{
+        font-family: 'Koulen';
+    }
+    .enj p{
+        margin-bottom: 40px;
+    }
+    .inp-row{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .inp-gp{
+        flex-basis: 45%;
+    }
+    input{
+        width: 100%;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+        background-color:rgba(192,192,192,0.3);
+    }
+    textarea{
+        width: 100%;
+        border: 1px solid #ccc;
+        outline: none;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color:rgba(192,192,192,0.3);
+        
+    }
+    ::placeholder{
+        color: black;
+        opacity: 0.7;
+    }
+    button{
+        background: rgb(196, 183, 183);
+        width: 100px;
+        border-radius: 30px;
+        padding: 2px;
+        font-size: 15px;
+        margin: 10px 0px;
+        border: none;
+        outline: none;
+        height: 35px;
+        box-shadow: 0px 5px 15px 0px rgb(196, 183, 183);
+    }
+    .left h3{
+        color: rgb(7, 7, 7);
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+    .right h3{
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+    tr td:first-child{
+        padding-right: 20px;
+    }
+    tr td{
+        padding-top: 20px;
+        font-size: 18px;
+    }
+</style>
+    <body>
+<section class="header">
+<nav>
+   <a href="tutorial.html"><img src="logo1.png"></a>
+    <div class="nav-links" id="navLinks">
+        <span class="material-symbols-outlined" onclick="hideMenu()">
+            close
+            </span>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="" class="dd">Divisions</a></li>                        
+            <li><a href="">States</a></li>
+            <li><a href="">Enjoy</a></li>
+        </ul>
+     </div>
+     <span class="material-symbols-outlined" onclick="showMenu()">
+        menu
+        </span>
+</nav>
+
+<!-- Enjoy-->
+<div class="enj">
+    <h1>Enjoy with Us</h1>
+    <p style="color: black; font-family: 'Allerta Stencil';font-size: 26px;">We would love to make you feel very convenient in Travelling.
+       <br> <br>Fell free to get in touch with us...
+        
+    </p>
+    <div class="contact-box">
+        <div class="left">
+            <h3 >Send your choice</h3>
+            <div>
+                <div class="inp-row">
+                    <div class="inp-gp">
+                        <label>Name</label>
+                        <input type="text" id="Name" placeholder="RunFree"  required>
+                    </div>
+                    <div class="inp-gp">
+                        <label>Phone</label>
+                        <input type="text" id="Phone" placeholder="+95 012345678" required>
+                    </div>
+                </div>
+                <div class="inp-row">
+                    <div class="inp-gp">
+                        <label>Email</label>
+                        <input type="email" id="Email" placeholder="runfree031@gmail.com"required>
+                    </div>
+                    <div class="inp-gp">
+                        <label>Desired location</label>
+                        <input type="text" id="Location" placeholder="Ngwe Saung" required>
+                    </div>
+                </div>
+                <label >Message</label>
+                <textarea rows="5" id="Message" placeholder="I love to go.........."></textarea>
+                <button  onclick="SendEmail()">Send</button>
+            </div>
+        </div>
+        <div class="right">
+            <h3>Reach Us</h3>
+            <table>
+                <tr>
+                    <td>Email</td>
+                    <td>mayanmar.us@gamil.com</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>+95 012345678</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>#212, Ground FLoor, 70th Street <br>
+                    Some  Layout , Some Road , Myanmar 
+                    Mya1212154
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<section class="footer">
+    <h4>About Us</h4> 
+    <p style="color: rgb(139, 125, 125);">Hello friends! I'm Yun Yun and Myanmar Citizen.The reason why I made this website is to help the tourisms exploring pleasures in Myanmar...
+<br>Thanks for Visiting Us..
+    </p>
+    <div class="icons">
+        <span class="material-symbols-outlined">mail</span>
+        <span class="material-symbols-outlined">contact_phone</span>   
+        <span class="material-symbols-outlined">share</span>    
+    </div>
+    <p style="color: rgb(139, 125, 125);">Made with<span class="material-symbols-outlined">favorite</span> by Yun Yun</p>
+</section>
+
+<!--Javascript Toggle Menu-->
+<script >
+   
+
+    function SendEmail(){
+        var params = {
+            Name       :   document.getElementById("Name").value,
+            Email      :   document.getElementById("Email").value,
+            Phone      :   document.getElementById("Phone").value,
+            Location   :   document.getElementById("Location").value,
+            Message    :   document.getElementById("Message").value
+            }
+            emailjs.send("service_iw6e9vn","template_sq803xx",params).then(function(res)
+            {
+                alert("Success" + res.status);
+        }
+            )
+
+            
+    }
+</script>
+
+    </body>
+</html>

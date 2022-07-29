@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static './style.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Xplore | {{user.username}} </title>
+</head>
+<body>
+    <center><h1>Welcome {{user.username}} </h1></center>
+    <center><h4><a href="/signout">Sign Out</a></h4></center>
+    <center><h4><a href="/settings">Account Settings</a></h4></center>
+    <!-- <center><h4><a href="/upload_posts">Share your travelling places...</a></h4></center> -->
+    <button type="button" class="collapsible">Share your travelling place....</button>
+    <div class="content">
+        <h1><a href="/"> Home </a> | Sharing your travelling place....</h1>
+        <img src="{{user_profile.profile_img.url}}"  style="width:80px;height:80px;border-radius:50%;
+        margin-left: 47%;" >
+        <center><h1 >{{user.username}}</h1></center>
+        <form action="upload_posts/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <center><table>
+                <tr>
+                    <td><label for="caption">Caption</label></td>
+                    <td><input type="text" name="caption"></td>
+                </tr>
+                <tr>
+                    <td><label for="upload_img">Select Images:</label></td>
+                    <td><input type="file" name="upload_img" multiple </td>   
+                </tr>
+                <tr>
+                    <td><label for="txt">About your place</label></td>
+                    <td class="txt"><textarea rows="7" cols="52" name="txt" placeholder="You can offer ..."></textarea></td>
+                </tr>
+                <tr>
+                    <th colspan="2"><button type="submit" class="btn">Xport your place...</button></th>
+                </tr>
+            </table></center>
+        </form>
+    </div>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
+</body>
+</html>

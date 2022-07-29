@@ -1,0 +1,131 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Xplore | Posts</title>
+        <style>
+          html {
+                height:100%;
+            }
+            
+            body {
+                margin:0;
+            }
+            
+            .bg {
+                animation:slide 3s ease-in-out infinite alternate;
+                background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+                bottom:0;
+                left:-50%;
+                opacity:.5;
+                position:fixed;
+                right:-50%;
+                top:0;
+                z-index:-1;
+            }
+            
+            .bg2 {
+                animation-direction:alternate-reverse;
+                animation-duration:4s;
+            }
+            
+            .bg3 {
+              animation-duration:5s;
+            }
+            @keyframes slide {
+            0% {
+                transform:translateX(-25%);
+            }
+        
+            100% {
+              transform:translateX(25%);
+            }
+          }
+         .container{
+          width: auto;
+          height: 300px;
+          display: flex;
+          padding: 10px;
+          margin: 30px;
+          margin-bottom: 40px;
+          overflow: auto;
+          /* background-image: linear-gradient(to right bottom, #ccd328, #80b13b, #428b44, #136442, #053d33, #0c3d37, 
+          #143d3b, #1c3d3d, #226564, #25908c, #24bdb6, #22ede0); */
+          /* filter: blur(8px);
+          -webkit-filter: blur(8px); */
+          box-shadow:
+                0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+                0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                0 12.5px 10px rgba(0, 0, 0, 0.06),
+                0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+                0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+                0 100px 80px rgba(0, 0, 0, 0.12)
+              ;
+          /* border: 1px solid black; */
+          /* border-radius: 30px; */
+         }  
+         .image #img1{
+          width: 250px;
+          height: 250px;
+          padding-right: 50px;
+          padding-top: 20px;
+          padding-left: 20px;
+         }
+         .txt p,h2{
+          font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          text-align: justify;
+          text-justify: inter-word;
+          color: rgb(0, 0, 0);
+         }
+         #pf {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+         }
+        </style>
+    </head>
+    <body>
+      <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
+      <center><h1 style="font-family:Arial, Helvetica, sans-serif">Xplore Travelling Places in Myanmar</h1></center>
+      {% for post in posts reversed%}
+        <div class="container">
+          <div class="image">
+            <img id="img1"src="{{post.image.url}}"/>
+          </div>
+          <div class="txt">
+            <h2>{{post.caption}}</h2>
+            <p>{{post.txt}}</p>
+            
+            <center><img src="{{user_profile.profile_img.url}}" id="pf"></center>
+          </div>
+
+          <h2 style="padding-right: 10px;">@{{post.user}}</h2>
+        </div>
+        {% endfor %}
+        
+
+          
+        <!-- Second block-->
+        <!-- <div class="container">
+          <div class="image">
+            <img src="C:\Users\Lenovo\Pictures\Saved Pictures\1.jpg"/>
+          </div>
+          <div class="txt">
+            <h2>Monkey.D.Luffy</h2>
+            <p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum 
+              interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula 
+              venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus 
+              vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at 
+              libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis.
+              Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+            <button onclick="myFunction()" id="myBtn">Read more</button></p>
+          </div>
+        </div> -->
+
+        
+    </body>
+</html>
+

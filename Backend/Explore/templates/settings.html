@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static './settings.css'%}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Xplore | Account Settings</title>
+   </head>
+<body>
+  <center><h2><a href="/" style="text-decoration: none; color:black ;"> Home 
+  </a> / Edit Profile for <b> {{user.username }} </b></h2></center>
+  <div class="fst-table">
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+        <table>
+            <tr>               
+                <td><label for="fst-name">First Name</label></td>
+                <td><input type="text" name="fst-name" value="{{user_profile.fst_name}}" ></td>                
+            </tr>
+            <tr>               
+                <td><label for="lst-name">Last Name</label></td>
+                <td><input type="text" name="lst-name" value="{{user_profile.lst_name}}"></td>               
+            </tr>
+            <tr>               
+              <td><label for="image">Profile Image</label></td>
+              <td><img width="100" height="100" src="{{user_profile.profile_img.url}}"></td>  
+              <td><input type="file" name="image" ></td>                        
+            </tr>
+            <tr>               
+              <td><label for="lst-name">Region</label></td>
+              <td><input type="text" name="region" value="{{user_profile.region}}"></td>               
+          </tr>
+        
+          <tr>               
+            <td><label for="lst-name">Language</label></td>
+            <td><input type="text" name="language" value="{{user_profile.language}}"></td>               
+        </tr>
+        <style>
+          h4{
+            color: red;
+          }
+        </style>
+        {%for message in messages%}
+        <tr>
+        <td colspan="3"><h4>{{message}}</h4></td>
+        {%endfor%}
+        </tr>
+            <!-- <tr>               
+              <td><label for="region">Region</label></td>
+              <td><select name="region">
+                <option value="1">Sagaing</option>
+                <option value="2">Magway</option>
+                <option value="3">Kayin</option>
+                <option value="4">Chin</option>
+                <option value="5">Mandalay</option>
+                <option value="6">Kayah</option>
+                <option value="7">Rakhine</option>
+                <option value="8">Yangon</option>
+                <option value="9">Mon</option>
+                <option value="10">Bago</option>
+                <option value="11">Tanintharyi</option>
+                <option value="12">Shan</option>
+                <option value="13">Kachin</option>
+                <option value="14">Ayearwady</option>
+              </select></td>               
+            </tr> -->
+             <!-- <tr>               
+              <td><label for="language">Language</label></td>
+              <td><select name="language">
+                  <option value="1">Burmese</option>
+                  <option value="2">English</option>
+                  <option value="3">Chin</option>
+                  <option value="4">Karen</option>
+                  <option value="5">Arakan</option>
+                  <option value="6">Kayan</option>
+                  <option value="7">Mon</option>
+                  <option value="8">Jinpho</option>
+                  <option value="9">Shan</option>
+              </select></td>               
+            </tr>  -->
+            <!-- <tr>               
+              <td><label for="lst-name">Region</label></td>
+              <td><input type="text" name="region" value="{{user_profile.region}}"></td>               
+          </tr> -->
+            <tr>
+                <th><button type="reset"> <a href="/" style="text-decoration: none;">Clear</a></th>
+                <th colspan="2"><button type="submit">Submit</th>    
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>  
+
+<!-- <div class="input-box">
+            <span class="details">Language</span>
+            <div class="custom-select" style="width:200px;" >
+              <select>
+                <option value="1">Burmese</option>
+                <option value="2">English</option>
+                <option value="3">Chin</option>
+                <option value="4">Karen</option>
+                <option value="5">Arakan</option>
+                <option value="6">Kayan</option>
+                <option value="7">Mon</option>
+                <option value="8">Jinpho</option>
+                <option value="9">Shan</option>               
+              </select>
+            </div>
+          </div> -->
+
+  
+        
+          <!-- <div class="input-box">
+            <span class="details">Region</span>
+            <div class="custom-select" style="width:400px;" >
+              <select>
+                <option value="1">Sagaing</option>
+                <option value="2">Magway</option>
+                <option value="3">Kayin</option>
+                <option value="4">Chin</option>
+                <option value="5">Mandalay</option>
+                <option value="6">Kayah</option>
+                <option value="7">Rakhine</option>
+                <option value="8">Yangon</option>
+                <option value="9">Mon</option>
+                <option value="10">Bago</option>
+                <option value="11">Tanintharyi</option>
+                <option value="12">Shan</option>
+                <option value="13">Kachin</option>
+                <option value="14">Ayearwady</option>
+              </select>
+            </div>
+          </div> -->
